@@ -1,0 +1,39 @@
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe.config
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.pdb
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csprojResolveAssemblyReference.cache
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Properties.Resources.resources
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.GenerateResource.Cache
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.exe
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.pdb
+D:\Проекты\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Form1.resources
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe.config
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.pdb
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csprojResolveAssemblyReference.cache
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Form1.resources
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Properties.Resources.resources
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.GenerateResource.cache
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.CoreCompileInputs.cache
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.exe
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.pdb
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe.config
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.pdb
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Form1.resources
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Properties.Resources.resources
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.GenerateResource.cache
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.exe
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.pdb
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csprojResolveAssemblyReference.cache
+D:\My Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.CoreCompileInputs.cache
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe.config
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.exe
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\bin\Debug\RobotTraider.pdb
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csprojResolveAssemblyReference.cache
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Form1.resources
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.Properties.Resources.resources
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.GenerateResource.Cache
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.CoreCompileInputs.cache
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.exe
+D:\My_Utilits\telegram\3D TERM\Терминал\Финальные проекты робота\RobotTraider\RobotTraider\obj\Debug\RobotTraider.pdb

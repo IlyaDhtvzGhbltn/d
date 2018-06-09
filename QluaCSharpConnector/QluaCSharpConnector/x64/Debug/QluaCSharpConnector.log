@@ -1,0 +1,8 @@
+﻿  QluaCSarpConnector.cpp
+     Creating library C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\QluaCSharpConnector\x64\Debug\QluaCSharpConnector.lib and object C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\QluaCSharpConnector\x64\Debug\QluaCSharpConnector.exp
+QluaCSarpConnector.obj : error LNK2019: unresolved external symbol lua_tolstring referenced in function "int __cdecl forLua_SendQuote(struct lua_State *)" (?forLua_SendQuote@@YAHPEAUlua_State@@@Z)
+QluaCSarpConnector.obj : error LNK2019: unresolved external symbol lua_pushstring referenced in function "int __cdecl forLua_GetCommand(struct lua_State *)" (?forLua_GetCommand@@YAHPEAUlua_State@@@Z)
+QluaCSarpConnector.obj : error LNK2019: unresolved external symbol lua_pushboolean referenced in function "int __cdecl forLua_CheckGotQuote(struct lua_State *)" (?forLua_CheckGotQuote@@YAHPEAUlua_State@@@Z)
+QluaCSarpConnector.obj : error LNK2019: unresolved external symbol luaL_openlib referenced in function luaopen_QluaCSharpConnector
+Lua\lua5.1.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\ryazanov.i\3D Objects\3D TERM\Терминал\Финальные проекты робота\QluaCSharpConnector\x64\Debug\QluaCSharpConnector.dll : fatal error LNK1120: 4 unresolved externals
