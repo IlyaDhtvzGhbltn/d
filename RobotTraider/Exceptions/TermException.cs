@@ -15,4 +15,9 @@ namespace QUIKException
     {
         public override string Message => "List Orders is Empty";
     }
+
+    public class LuaScriptReturnNULL : Exception 
+    {
+        public override string Message => "Lua script return NULL from Quik. Check the script launch.";
+    }
 }

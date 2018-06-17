@@ -45,8 +45,8 @@ namespace TradeObjects
             notPosition,
             SendBidLong,
             SendBidShort,
-            OpenLONG,
-            OpenSHORT
+            OpenPositionLONG,
+            OpenPositionSHORT
        }
     }
 }

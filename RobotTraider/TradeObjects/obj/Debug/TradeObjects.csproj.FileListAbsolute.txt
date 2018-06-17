@@ -3,3 +3,4 @@ H:\Terminal\RobotTraider\TradeObjects\bin\Debug\TradeObjects.pdb
 H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.csproj.CoreCompileInputs.cache
 H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.dll
 H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.pdb
+H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.csprojAssemblyReference.cache

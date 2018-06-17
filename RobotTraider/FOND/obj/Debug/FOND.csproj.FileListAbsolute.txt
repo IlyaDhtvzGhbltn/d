@@ -9,3 +9,7 @@ H:\Terminal\RobotTraider\FOND\obj\Debug\FOND.dll
 H:\Terminal\RobotTraider\FOND\obj\Debug\FOND.pdb
 H:\Terminal\RobotTraider\FOND\bin\Debug\DataContractRializer.dll
 H:\Terminal\RobotTraider\FOND\bin\Debug\DataContractRializer.pdb
+H:\Terminal\RobotTraider\FOND\bin\Debug\determinantTrend.dll
+H:\Terminal\RobotTraider\FOND\bin\Debug\Exceptions.dll
+H:\Terminal\RobotTraider\FOND\bin\Debug\determinantTrend.pdb
+H:\Terminal\RobotTraider\FOND\bin\Debug\Exceptions.pdb

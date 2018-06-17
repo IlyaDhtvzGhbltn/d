@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
-using System.Windows.Forms;
-using Istrategies = TradeObjects.Strategies.Istrategies;
-using TradingStrategistQUIK;
-using Connector = TradeObjects.LuaConnection.LuaMMFConnector;
-using static TradeObjects.QuikDataObj;
 using DataContractRializer;
+using System.Windows.Forms;
+using TradingStrategistQUIK;
+using static TradeObjects.QuikDataObj;
+using Istrategies = TradeObjects.Strategies.Istrategies;
+using Connector = TradeObjects.LuaConnection.LuaMMFConnector;
 
 namespace RobotTraider
 {

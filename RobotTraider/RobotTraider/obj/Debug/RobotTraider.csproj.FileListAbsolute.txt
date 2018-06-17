@@ -54,3 +54,7 @@ H:\Terminal\RobotTraider\RobotTraider\bin\Debug\DataContractRializer.pdb
 H:\Terminal\RobotTraider\RobotTraider\bin\Debug\FOND.pdb
 H:\Terminal\RobotTraider\RobotTraider\bin\Debug\TradeObjects.pdb
 H:\Terminal\RobotTraider\RobotTraider\obj\Debug\RobotTraider.csproj.CopyComplete
+H:\Terminal\RobotTraider\RobotTraider\bin\Debug\Exceptions.dll
+H:\Terminal\RobotTraider\RobotTraider\bin\Debug\determinantTrend.dll
+H:\Terminal\RobotTraider\RobotTraider\bin\Debug\Exceptions.pdb
+H:\Terminal\RobotTraider\RobotTraider\bin\Debug\determinantTrend.pdb
