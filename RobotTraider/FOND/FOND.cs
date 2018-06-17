@@ -70,10 +70,10 @@ namespace TradingStrategistQUIK
                         return NewTransaction(glass);
 
                     case PositionStatus.SendBidLong:
-                        return AlreadySendBid(glass);
+                        return SendTransLONG(glass);
 
                     case PositionStatus.SendBidShort:
-                        return AlreadySendBid(glass);
+                        return SendTransSHORT(glass);
 
                     case PositionStatus.OpenPositionLONG:
                         return EnterINLongPosition(glass);
@@ -86,7 +86,8 @@ namespace TradingStrategistQUIK
 
             private ToQuikCommand NewTransaction(Glass glass)
             {
-                var Bid = getBidObj(glass);
+                BidObject Bid = getBidObj(glass);
+
                 if (Bid != null)
                 {
                     if (Bid.Trend == Trend.Bull)
@@ -115,23 +116,64 @@ namespace TradingStrategistQUIK
                             Operation = "S",
                             Trans_Id = LastTransId,
                         };
-
                     }
                     else if (Bid.Trend == Trend.Unstable)
                     {
+                        Position = PositionStatus.notPosition;
                         return new ToQuikCommand { Command_Code = Operation.Wait };
                     }
                     else return null;
                 }
-                throw new TermException();
+                return new ToQuikCommand { Command_Code = Operation.Wait };
             }
 
-
-            private ToQuikCommand AlreadySendBid(Glass glass)
+            private ToQuikCommand SendTransSHORT(Glass glass)
             {
                 bool IsInGlass = IsPriceBidInGlass(glass);
                 bool IsPositOpen = IsPositionOpen();
+                var trend = getTrendFromGlassOnly.GetTrend(glass);
 
+                if (trend == Trend.Bull)
+                {
+                    var ThrQuant = this.CurrTransPrceQuant.Qantity;
+                    ClearBid();
+                    return new ToQuikCommand(account: this.Account, classCode: this.ClassCode, secCode: this.SecCode)
+                    {
+                        Command_Code = Operation.CloseShort,
+                        ThrowQantity = ThrQuant
+                    };
+                }
+
+                if (IsInGlass == false)
+                {
+                    string Id = this.LastTransId;
+                    ClearBid();
+                    return new ToQuikCommand { Command_Code = Operation.Cancel, Trans_Id = Id };
+                }
+
+                if (IsPositOpen)
+                {
+                    this.Position = PositionStatus.OpenPositionSHORT;
+                }
+                return new ToQuikCommand { Command_Code = Operation.Wait };
+            }
+
+            private ToQuikCommand SendTransLONG(Glass glass)
+            {
+                bool IsInGlass = IsPriceBidInGlass(glass);
+                bool IsPositOpen = IsPositionOpen();
+                var trend = getTrendFromGlassOnly.GetTrend(glass);
+
+                if (trend == Trend.Bear)
+                {
+                    var ThrQuant = this.CurrTransPrceQuant.Qantity;
+                    ClearBid();
+                    return new ToQuikCommand(account: this.Account, classCode: this.ClassCode, secCode: this.SecCode)
+                    {
+                        Command_Code = Operation.CloseLong,
+                        ThrowQantity = ThrQuant
+                    };
+                }
                 if (IsInGlass == false)
                 {
                     string Id = this.LastTransId;
@@ -140,17 +182,10 @@ namespace TradingStrategistQUIK
                 }
                 if (IsPositOpen)
                 {
-                    if (LastOpertionTrend == Trend.Bear)
-                        this.Position = PositionStatus.OpenPositionSHORT;
-                    else
-                        this.Position = PositionStatus.OpenPositionLONG;
-
-                    return new ToQuikCommand { Command_Code = Operation.Wait };
+                    this.Position = PositionStatus.OpenPositionLONG;
                 }
-
                 return new ToQuikCommand { Command_Code = Operation.Wait };
             }
-
 
             private ToQuikCommand EnterINLongPosition(Glass glass)
             {
@@ -161,7 +196,11 @@ namespace TradingStrategistQUIK
                 {
                     var Quantity = CurrTransPrceQuant.Qantity;
                     ClearBid();
-                    return new ToQuikCommand {Command_Code = Operation.CloseLong, ThrowQantity = Quantity };
+                    return new ToQuikCommand(account: this.Account, classCode: this.ClassCode, secCode: this.SecCode)
+                    {
+                        Command_Code = Operation.CloseLong,
+                        ThrowQantity = Quantity
+                    };
                 }
             }
 
@@ -172,8 +211,13 @@ namespace TradingStrategistQUIK
                     return new ToQuikCommand { Command_Code = Operation.Wait };
                 else
                 {
+                    var Quantity = CurrTransPrceQuant.Qantity;
                     ClearBid();
-                    return new ToQuikCommand { Command_Code = Operation.CloseShort, ThrowQantity = this.CurrTransPrceQuant.Qantity };
+                    return new ToQuikCommand(account: this.Account, classCode: this.ClassCode, secCode: this.SecCode)
+                    {
+                        Command_Code = Operation.CloseShort,
+                        ThrowQantity = Quantity
+                    };
                 }
             }
 
@@ -199,16 +243,11 @@ namespace TradingStrategistQUIK
                 string TrId = rnd.Next(1, 2000000).ToString();
                 this.LastTransId = TrId;
                 this.LastOpertionTrend = Bid.Trend;
-
-                //if (Bid.Trend == Trend.Bear)
-                //    this.Position = PositionStatus.SendBidShort;
-                //else
-                //    this.Position = PositionStatus.SendBidLong;
             }
 
             private BidObject getBidObj(Glass glass)
             {
-                var trend = getTrendFromGlassOnly.GetTrend(glass, K);
+                var trend = getTrendFromGlassOnly.GetTrend(glass);
                 if (trend != Trend.Unstable)
                 {
                     var price = getBestPricefromHighQuantity.getPrices(glass)[trend];
@@ -240,8 +279,9 @@ namespace TradingStrategistQUIK
                 if (ListOrders.Count > 0)
                 {
                     var TransactionStat = ListOrders.LastOrDefault().flag_status;
+
                     if (TransactionStat == Flag_Status.buy_kill || TransactionStat == Flag_Status.sale_kill)
-                        this.Position = PositionStatus.notPosition;
+                        return false;
                     if (TransactionStat == Flag_Status.buy_confirm || TransactionStat == Flag_Status.sale_confirm || TransactionStat == Flag_Status.confirm)
                     {
                         return true;
@@ -251,9 +291,6 @@ namespace TradingStrategistQUIK
                 }
                 throw new ListOrderException();
             }
-
-
-
 
             private class BidObject
             {

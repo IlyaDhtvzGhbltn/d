@@ -28,7 +28,6 @@ function main()
 				else
 					local Tr = CommandStr
 					result = sendTransaction(Tr);
-					message(result,1);
 				end
 			end;
 		
@@ -132,10 +131,10 @@ end
 
 
 function SendTransaction(transStr)
-
+message('send trans');
 t = transStr;
 res=sendTransaction(t)
-message(res,1)
+message(res,1);
 end
 
 function KillTrans(trans_id)
@@ -151,11 +150,12 @@ local killingId = string.sub(trans_id, 3);
 					 t = {
 					 ACTION="KILL_ORDER",
 					 ORDER_KEY = tostring(OrderRow.order_num),
-					 CLASSCODE="TQBR",
+					 CLASSCODE="QJSIM",
 					 trans_id = tostring(killingId)
 					 }
 					res=sendTransaction(t)
-					message(res,1)
+					message(res,1);
+					message('kill trans');
 				end;
 		end;
 	end;

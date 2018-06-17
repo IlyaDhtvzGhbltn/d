@@ -10,15 +10,12 @@ namespace determinantTrend.BestPrice
         public static Dictionary<Trend, float> getPrices(Glass glass)
         {
             var trendPrices = new Dictionary<Trend, float>();
+            Spread spred = new Spread { BuyCell = glass.BuyCells.First(), SaleCell = glass.SaleCells.Last() };
+            float spredSalePrice = spred.SaleCell.Price;
+            float spredBuyPrice = spred.BuyCell.Price;
 
-            var maxBuyQuantity = glass.BuyCells.Max(x => x.Qantity);
-            var maxSaleQuantity = glass.SaleCells.Max(x => x.Qantity);
-
-            var priceBuy = glass.BuyCells.First(x => x.Qantity == maxBuyQuantity).Price;
-            var priceSale = glass.SaleCells.First(x => x.Qantity == maxSaleQuantity).Price;
-
-            trendPrices[Trend.Bull] = priceBuy;
-            trendPrices[Trend.Bear] = priceSale;
+            trendPrices[Trend.Bull] = spredBuyPrice;
+            trendPrices[Trend.Bear] = spredSalePrice;
             return trendPrices;
         }
 
