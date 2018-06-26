@@ -23,6 +23,11 @@ HANDLE hFileMapTerminalQuote = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAG
 TCHAR NameOrders[] = TEXT("Orders");
 HANDLE hFileMapOrders = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 1400, NameOrders);
 
+// Имя для свечей
+TCHAR NameCandles[] = TEXT("Candles");
+HANDLE hFileMapOrders = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 1400, NameCandles);
+
+
 //=== Стандартная точка входа для DLL ==========================================================================//
 BOOL APIENTRY DllMain(HANDLE hModule, DWORD  fdwReason, LPVOID lpReserved)
 {

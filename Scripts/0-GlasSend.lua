@@ -1,4 +1,4 @@
-require("QluaCSharpConnector")
+require("	")
 
 IsStop = false;         -- Флаг остановки скрипта
  
@@ -10,6 +10,7 @@ Stack.max = 1000;       -- Максимально возможное количество записей в стеке (при
  
 CLASS_CODE   = "QJSIM";   -- Класс бумаги
 SEC_CODE     = "SBER";	   -- Код бумаги
+CANDL_IND = 5;   		--число свечек
  
 function main()
    local FirstQuote = true;
@@ -25,6 +26,8 @@ function main()
 				
 				elseif Header == 'k' then
 					KillTrans(CommandStr)
+				elseif  Header == 'c' then
+					CANDL_IND = tonumber(string.sub(CommandStr,2,2));
 				else
 					local Tr = CommandStr
 					result = sendTransaction(Tr);
@@ -47,7 +50,7 @@ function main()
 			QluaCSharpConnector.SendOrders(Orders);
 			end;
 	  end;
- 
+	  QluaCSharpConnector.SendCandles();
       sleep(1);
    end;
 end
@@ -129,7 +132,6 @@ function OnStop(s)
    IsStop = true;
 end
 
-
 function SendTransaction(transStr)
 message('send trans');
 t = transStr;
@@ -173,7 +175,28 @@ AllRows = tonumber(getNumberOf("orders"));
 	end;
 end;
 
-
+function SendCandles()
+{
+ds,Error = CreateDataSource(CLASS_CODE, SEC_CODE, INTERVAL_M5)  
+while (Error == "" or Error == nil) and ds:Size() == 0 do sleep(1) end  
+if Error ~= "" and Error ~= nil then 
+return("Connected Error : "..Error) 
+end  
+local massive = "["
+if ds ~= nil then  
+for i=ds:Size()-CANDL_IND, ds:Size(), 1 do  
+local item = tostring("{"..
+"\"open\":"..ds:O(i)..","..
+"\"close\":"..ds:C(i)..","..
+"\"high\":"..ds:H(i)..","..
+"\"low\":"..ds:L(i)..","..
+"\"volume\":"..ds:V(i)..","..
+"\"index\":"..(i).."}"..",")
+massive = massive..item;
+end
+end;
+return massive;
+}
 
 
 
