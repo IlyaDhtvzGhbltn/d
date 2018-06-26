@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static TradeObjects.Enums;
 using enums = TradeObjects.Enums;
 
 namespace TradeObjects
@@ -34,6 +35,70 @@ namespace TradeObjects
             public Spread Spread { get; set; }
             public List<GlassCell> BuyCells { get; set; }
             public List<GlassCell> SaleCells { get; set; }
+
+            public float MiddleQuantity()
+            {
+                float bidCount = 0;
+                float totalQuantity = 0;
+                bidCount += this.BuyCells.Count;
+                bidCount += this.SaleCells.Count;
+                totalQuantity += BuyCells.Sum(x=>x.Qantity);
+                totalQuantity += SaleCells.Sum(x=>x.Qantity);
+                return totalQuantity / bidCount;
+            }
+            public Tuple<Trend, float, int> GetBidQuantMoreMidd(float midd, int K)
+            {
+                var SaleQuant = this.SaleCells.Max(x=>x.Qantity);
+                var BuyQant = this.BuyCells.Max(x => x.Qantity);
+                GlassCell TargetCell;
+                Trend TargTrend;
+
+                if (BuyQant > SaleQuant)
+                {
+                    TargetCell = this.BuyCells.FirstOrDefault(x => x.Qantity == BuyQant);
+                    TargTrend = Trend.Bull;
+                }
+                else
+                {
+                    TargetCell = this.SaleCells.FirstOrDefault(x => x.Qantity == SaleQuant);
+                    TargTrend = Trend.Bear;
+                }
+
+                if (TargetCell.Qantity >= midd * K)
+                {
+                    return new Tuple<Trend, float, int>(TargTrend, TargetCell.Price, TargetCell.Qantity);
+                }
+               
+
+                return null;
+            }
+
+            public bool IsBidINSpreadByPrice(float price)
+            {
+                try
+                {
+                    int indexInSale = this.SaleCells.FindIndex(x => x.Price == price);
+                    int indexInBuy = this.BuyCells.FindIndex(x => x.Price == price);
+                    int lastSpredIndexInSale = BuyCells.Count - 1;
+                    if (indexInBuy == 0 || indexInSale == lastSpredIndexInSale)
+                    {
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+            }
+
+            public float getActualPrice()
+            {
+                return SaleCells.Last().Price;
+            }
+
         }
 
         public class ToQuikCommand

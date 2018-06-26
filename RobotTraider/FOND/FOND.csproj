@@ -48,10 +48,6 @@
       <Project>{19fefa5a-bd2d-4b09-b02b-fce6e4d2fb9a}</Project>
       <Name>DataContractRializer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\determinantTrend\determinantScalpingTrend.csproj">
-      <Project>{C5EE6FEE-2D8D-4BDD-9390-3F929194CE7C}</Project>
-      <Name>determinantScalpingTrend</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{de1039ea-7f26-4635-84b7-c5fe5b0bfcb7}</Project>
       <Name>Exceptions</Name>

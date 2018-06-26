@@ -4,6 +4,6 @@ namespace TradeObjects.Strategies
 {
     public interface Istrategies
     {
-        ToQuikCommand GetToQUIKCommand(object glas);
+        ToQuikCommand GetToQUIKCommand(Glass glas);
     }
 }

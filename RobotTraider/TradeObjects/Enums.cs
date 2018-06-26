@@ -14,8 +14,8 @@ namespace TradeObjects
             Buy = 1,
             Sale = 2,
             Cancel = 666,
-            CloseLong = 11,
-            CloseShort = 12
+            SaleInMarket = 11,
+            BuyInMarket = 12
         }
 
         public enum Flag_Status

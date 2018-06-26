@@ -25,11 +25,11 @@ namespace DataContractRializer
                     case Operation.Wait:
                         transStr = "w";
                         break;
-                    case Operation.CloseShort:
-                        transStr = MarketBuySale_Serialize(QComm, 'S');
-                        break;
-                    case Operation.CloseLong:
+                    case Operation.BuyInMarket:
                         transStr = MarketBuySale_Serialize(QComm, 'B');
+                        break;
+                    case Operation.SaleInMarket:
+                        transStr = MarketBuySale_Serialize(QComm, 'S');
                         break;
                 }
                 return transStr;
@@ -80,8 +80,8 @@ namespace DataContractRializer
                 QComm.Action,
                 QComm.Account,
                 reverseTO,
-                QComm.ThrowQantity,
-                "1",
+                QComm.Qantity,
+                QComm.Trans_Id,
                 0
                 );
             return Market_transStr;
