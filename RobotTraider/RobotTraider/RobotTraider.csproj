@@ -87,9 +87,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataContractRializer\DataContractRializer.csproj">
+    <ProjectReference Include="..\DataContractRializer\DataContractConvert.csproj">
       <Project>{19fefa5a-bd2d-4b09-b02b-fce6e4d2fb9a}</Project>
-      <Name>DataContractRializer</Name>
+      <Name>DataContractConvert</Name>
     </ProjectReference>
     <ProjectReference Include="..\FOND\FOND.csproj">
       <Project>{f83c0fa6-ad97-41cd-b372-e074e62c7f8b}</Project>

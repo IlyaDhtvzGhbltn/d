@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TradeObjects;
 using static TradeObjects.Enums;
 using static TradeObjects.QuikDataObj;
 using OrderRow = TradeObjects.QuikDataObj.BaseOrderRow;
+using Newtonsoft.Json;
 
-namespace DataContractRializer
+namespace DataContractConvert
 {
     public class Deserializer
     {
@@ -58,6 +60,7 @@ namespace DataContractRializer
             }
             return null;
         }
+
         public static List<OrderRow> Orders(string StrOrders)
         {
             string[] StrDataRows;
@@ -88,6 +91,24 @@ namespace DataContractRializer
                     }
                 }
                 return OrdersRows;
+            }
+            return null;
+        }
+
+        public static Candle[] Candles(string strCandl)
+        {
+            if (!string.IsNullOrWhiteSpace(strCandl))
+            {
+                //strCandl = strCandl.Remove(strCandl.IndexOf(']') + 1);
+                try
+                {
+                    Candle[] CandlSet = JsonConvert.DeserializeObject<Candle[]>(strCandl);
+                    return CandlSet;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
             return null;
         }

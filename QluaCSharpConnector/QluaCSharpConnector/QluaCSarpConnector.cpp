@@ -8,6 +8,7 @@ extern "C" {
 #include "Lua\lua.h"
 }
 
+ 
 // Имя для выделенной памяти для команды
 TCHAR Name[] = TEXT("QUIKCommand");
 // Создаст, или подключится к уже созданной памяти с таким именем
@@ -25,7 +26,7 @@ HANDLE hFileMapOrders = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READW
 
 // Имя для свечей
 TCHAR NameCandles[] = TEXT("Candles");
-HANDLE hFileMapOrders = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 1400, NameCandles);
+HANDLE hFileMapCandles = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 1400, NameCandles);
 
 
 //=== Стандартная точка входа для DLL ==========================================================================//
@@ -186,6 +187,31 @@ static int forLua_SendOrders(lua_State *L)
 	return(1);
 }
 
+//отправляет график СВЕЧЕЙ
+static int forLua_SendCandles(lua_State *L) 
+{
+	if (hFileMapCandles)
+	{
+		PBYTE pb = (PBYTE)(MapViewOfFile(hFileMapCandles, FILE_MAP_READ | FILE_MAP_WRITE, 0, 0, 1400));
+		if (pb != NULL)
+		{
+			const char *Candles = lua_tostring(L, 1);
+			int Size = 0;
+			for (int i = 0; i < 1400; i++)
+			{
+				if (Candles[i] == 0)break;
+				Size++;
+			}
+			memcpy(pb, Candles, Size);
+			UnmapViewOfFile(pb);
+		}
+		else lua_pushstring(L, "");
+	}
+	else lua_pushstring(L, "");
+
+	return(1);
+}
+
 //=== Регистрация реализованных в dll функций, чтобы они стали "видимы" для Lua ================================//
 static struct luaL_reg ls_lib[] = {
 	{ "GetCommand", forLua_GetCommand }, // из скрипта Lua эту функцию можно будет вызывать так: QluaCSharpConnector.TestFunc()
@@ -193,6 +219,7 @@ static struct luaL_reg ls_lib[] = {
 	{ "SendQuote", forLua_SendQuote},
 	{ "CheckOrders", forLua_CheckOrders },
 	{ "SendOrders", forLua_SendOrders },
+	{ "SendCandles", forLua_SendCandles },
 	{ NULL, NULL }
 };
 

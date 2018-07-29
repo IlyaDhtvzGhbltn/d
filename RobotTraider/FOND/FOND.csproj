@@ -44,13 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataContractRializer\DataContractRializer.csproj">
+    <ProjectReference Include="..\DataContractRializer\DataContractConvert.csproj">
       <Project>{19fefa5a-bd2d-4b09-b02b-fce6e4d2fb9a}</Project>
-      <Name>DataContractRializer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
-      <Project>{de1039ea-7f26-4635-84b7-c5fe5b0bfcb7}</Project>
-      <Name>Exceptions</Name>
+      <Name>DataContractConvert</Name>
     </ProjectReference>
     <ProjectReference Include="..\TradeObjects\TradeObjects.csproj">
       <Project>{652736a2-6a16-4bf6-9475-de0640e92e7e}</Project>

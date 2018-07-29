@@ -1,0 +1,9 @@
+H:\Terminal\RobotTraider\DataContractRializer\bin\Debug\DataContractRializer.dll
+H:\Terminal\RobotTraider\DataContractRializer\bin\Debug\DataContractRializer.pdb
+H:\Terminal\RobotTraider\DataContractRializer\bin\Debug\Newtonsoft.Json.dll
+H:\Terminal\RobotTraider\DataContractRializer\bin\Debug\TradeObjects.dll
+H:\Terminal\RobotTraider\DataContractRializer\bin\Debug\TradeObjects.pdb
+H:\Terminal\RobotTraider\DataContractRializer\bin\Debug\Newtonsoft.Json.xml
+H:\Terminal\RobotTraider\DataContractRializer\obj\Debug\DataContractRializer.dll
+H:\Terminal\RobotTraider\DataContractRializer\obj\Debug\DataContractRializer.pdb
+H:\Terminal\RobotTraider\DataContractRializer\obj\Debug\DataContractConvert.csprojResolveAssemblyReference.cache

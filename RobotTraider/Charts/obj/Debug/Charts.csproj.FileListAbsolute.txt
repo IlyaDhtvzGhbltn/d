@@ -1,0 +1,11 @@
+H:\Terminal\RobotTraider\Charts\bin\Debug\Charts.exe.config
+H:\Terminal\RobotTraider\Charts\obj\Debug\Charts.csprojResolveAssemblyReference.cache
+H:\Terminal\RobotTraider\Charts\obj\Debug\Charts.Form1.resources
+H:\Terminal\RobotTraider\Charts\obj\Debug\Charts.Properties.Resources.resources
+H:\Terminal\RobotTraider\Charts\obj\Debug\Charts.csproj.GenerateResource.Cache
+H:\Terminal\RobotTraider\Charts\bin\Debug\Charts.exe
+H:\Terminal\RobotTraider\Charts\bin\Debug\Charts.pdb
+H:\Terminal\RobotTraider\Charts\bin\Debug\Newtonsoft.Json.dll
+H:\Terminal\RobotTraider\Charts\bin\Debug\Newtonsoft.Json.xml
+H:\Terminal\RobotTraider\Charts\obj\Debug\Charts.exe
+H:\Terminal\RobotTraider\Charts\obj\Debug\Charts.pdb

@@ -1,6 +1,7 @@
 H:\Terminal\RobotTraider\TradeObjects\bin\Debug\TradeObjects.dll
 H:\Terminal\RobotTraider\TradeObjects\bin\Debug\TradeObjects.pdb
-H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.csproj.CoreCompileInputs.cache
 H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.dll
 H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.pdb
-H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.csprojAssemblyReference.cache
+H:\Terminal\RobotTraider\TradeObjects\obj\Debug\TradeObjects.csprojResolveAssemblyReference.cache
+H:\Terminal\RobotTraider\TradeObjects\bin\Debug\Newtonsoft.Json.dll
+H:\Terminal\RobotTraider\TradeObjects\bin\Debug\Newtonsoft.Json.xml

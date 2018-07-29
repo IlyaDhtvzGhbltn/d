@@ -10,12 +10,13 @@ namespace TradeObjects
     {
         public enum Operation
         {
-            Wait = 0,
-            Buy = 1,
-            Sale = 2,
-            Cancel = 666,
-            SaleInMarket = 11,
-            BuyInMarket = 12
+            Wait,
+            Buy,
+            Sale,
+            Cancel,
+            SaleInMarket,
+            BuyInMarket,
+            SetCandles
         }
 
         public enum Flag_Status

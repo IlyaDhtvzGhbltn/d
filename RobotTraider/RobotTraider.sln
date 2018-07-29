@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2018
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotTraider", "RobotTraider\RobotTraider.csproj", "{66DE2848-A675-412E-BB73-41ACFA3AFF66}"
 EndProject
@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FOND", "FOND\FOND.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeObjects", "TradeObjects\TradeObjects.csproj", "{652736A2-6A16-4BF6-9475-DE0640E92E7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContractRializer", "DataContractRializer\DataContractRializer.csproj", "{19FEFA5A-BD2D-4B09-B02B-FCE6E4D2FB9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContractConvert", "DataContractRializer\DataContractConvert.csproj", "{19FEFA5A-BD2D-4B09-B02B-FCE6E4D2FB9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{DE1039EA-7F26-4635-84B7-C5FE5B0BFCB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charts", "Charts\Charts.csproj", "{B662A478-9687-43B7-8A5C-007941756346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{19FEFA5A-BD2D-4B09-B02B-FCE6E4D2FB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FEFA5A-BD2D-4B09-B02B-FCE6E4D2FB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FEFA5A-BD2D-4B09-B02B-FCE6E4D2FB9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE1039EA-7F26-4635-84B7-C5FE5B0BFCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE1039EA-7F26-4635-84B7-C5FE5B0BFCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE1039EA-7F26-4635-84B7-C5FE5B0BFCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE1039EA-7F26-4635-84B7-C5FE5B0BFCB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B662A478-9687-43B7-8A5C-007941756346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B662A478-9687-43B7-8A5C-007941756346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B662A478-9687-43B7-8A5C-007941756346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B662A478-9687-43B7-8A5C-007941756346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

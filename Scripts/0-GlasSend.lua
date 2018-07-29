@@ -1,4 +1,4 @@
-require("	")
+require("QluaCSharpConnector")
 
 IsStop = false;         -- Флаг остановки скрипта
  
@@ -10,15 +10,15 @@ Stack.max = 1000;       -- Максимально возможное количество записей в стеке (при
  
 CLASS_CODE   = "QJSIM";   -- Класс бумаги
 SEC_CODE     = "SBER";	   -- Код бумаги
-CANDL_IND = 5;   		--число свечек
+
  
 function main()
    local FirstQuote = true;
    local Quote = "";
    -- ОСНОВНОЙ ЦИКЛ
    while not IsStop do	
- 		local CommandStr = tostring(QluaCSharpConnector.GetCommand());
-			if CommandStr ~= "" then
+ 	  local CommandStr = tostring(QluaCSharpConnector.GetCommand());
+	  if CommandStr ~= "" then
 				Header = tostring(string.sub(CommandStr,1,1));
 				
 				if Header == 'w' then
@@ -27,13 +27,12 @@ function main()
 				elseif Header == 'k' then
 					KillTrans(CommandStr)
 				elseif  Header == 'c' then
-					CANDL_IND = tonumber(string.sub(CommandStr,2,2));
+					SetCandles(CommandStr)
 				else
 					local Tr = CommandStr
 					result = sendTransaction(Tr);
 				end
 			end;
-		
       if QluaCSharpConnector.CheckGotQuote() or FirstQuote then
          -- берет стакан из стека
          Quote = GetFromStack();
@@ -50,7 +49,7 @@ function main()
 			QluaCSharpConnector.SendOrders(Orders);
 			end;
 	  end;
-	  QluaCSharpConnector.SendCandles();
+	  QluaCSharpConnector.SendCandles(GetCandles());
       sleep(1);
    end;
 end
@@ -175,29 +174,39 @@ AllRows = tonumber(getNumberOf("orders"));
 	end;
 end;
 
-function SendCandles()
-{
-ds,Error = CreateDataSource(CLASS_CODE, SEC_CODE, INTERVAL_M5)  
+function GetCandles()
+ds,Error = CreateDataSource(CLASS_CODE, SEC_CODE, INTERVAL_M1)  
 while (Error == "" or Error == nil) and ds:Size() == 0 do sleep(1) end  
 if Error ~= "" and Error ~= nil then 
 return("Connected Error : "..Error) 
 end  
-local massive = "["
-if ds ~= nil then  
-for i=ds:Size()-CANDL_IND, ds:Size(), 1 do  
-local item = tostring("{"..
-"\"open\":"..ds:O(i)..","..
-"\"close\":"..ds:C(i)..","..
-"\"high\":"..ds:H(i)..","..
-"\"low\":"..ds:L(i)..","..
-"\"volume\":"..ds:V(i)..","..
-"\"index\":"..(i).."}"..",")
-massive = massive..item;
-end
-end;
-return massive;
-}
 
+	
+	local massive = "["
+	if ds ~= nil then  
+	
+		for i=ds:Size() - 1, ds:Size(), 1 do  
+		local item = tostring("{"..
+		"open:"..ds:O(i)..","..
+		"close:"..ds:C(i)..","..
+		"high:"..ds:H(i)..","..
+		"low:"..ds:L(i)..","..
+		"volume:"..ds:V(i)..","..
+		"index:"..(i).."}"..",")
+		massive = massive..item;
+		end
+		massive = massive.."]";
+	end;
+	
+	
+return massive;
+end
+
+
+function SetCandles(CommandStr)
+	CANDL_IND = tonumber(string.sub(CommandStr,3,3));
+	FIRST_CND = false;
+end
 
 
 

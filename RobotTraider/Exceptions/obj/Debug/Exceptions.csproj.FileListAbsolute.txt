@@ -1,6 +1,5 @@
 H:\Terminal\RobotTraider\Exceptions\bin\Debug\Exceptions.dll
 H:\Terminal\RobotTraider\Exceptions\bin\Debug\Exceptions.pdb
-H:\Terminal\RobotTraider\Exceptions\obj\Debug\Exceptions.csprojAssemblyReference.cache
 H:\Terminal\RobotTraider\Exceptions\obj\Debug\Exceptions.csproj.CoreCompileInputs.cache
 H:\Terminal\RobotTraider\Exceptions\obj\Debug\Exceptions.dll
 H:\Terminal\RobotTraider\Exceptions\obj\Debug\Exceptions.pdb

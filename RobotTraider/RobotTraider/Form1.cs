@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Threading;
-using DataContractRializer;
+using DataContractConvert;
 using System.Windows.Forms;
 using TradingStrategistQUIK;
 using static TradeObjects.QuikDataObj;
 using Istrategies = TradeObjects.Strategies.Istrategies;
 using Connector = TradeObjects.LuaConnection.LuaMMFConnector;
 using static TradingStrategistQUIK.SBER_actio;
+using TradeObjects.CandleWriter;
 
 namespace RobotTraider
 {
@@ -16,6 +17,8 @@ namespace RobotTraider
         public volatile bool Run = true;
         Connector CommandCtor;
         Connector GlassCtor;
+        Connector Candles;
+        QuikWriter Writer;
         delegate void Print(string glasscellprice);
 
 
@@ -25,27 +28,35 @@ namespace RobotTraider
             InitializeComponent();
             GlassCtor = new Connector("TerminalQuote");
             CommandCtor = new Connector("QUIKCommand");
+            Candles = new Connector("Candles");
+
             Scalp = new SBER_actio.ScalpNewVer("QJSIM", "SBER", "NL0011100043", "Orders");
-            BidSolution(GlassCtor, Scalp);
+            BidSolution(GlassCtor, Candles, Scalp);
+
+            Writer = new QuikWriter();
         }
 
-        private void BidSolution(Connector ctror, Istrategies Strateg)
+        private void BidSolution(Connector ctroGlass, Connector ctorCandles, Istrategies Strateg)
         {
             new Thread(() =>
             {
-                string QuoteStr = string.Empty;
+                //string Glass = string.Empty;
+                string Candles = string.Empty;
                 while (Run)
                 {
-                    QuoteStr = ctror.GetData();
-                    var glass = Deserializer.Glass(QuoteStr);
-
-
-                    FillVisual(glass, Strateg);
-                    ToQuikCommand BidComms = Strateg.GetToQUIKCommand(glass);
-                    var LuaCommand = Serializer.QuikCommandToTransaction(BidComms);
-                    CommandCtor.SendData(LuaCommand);
+                    //Glass = ctroGlass.GetData();
+                    Candles = ctorCandles.GetData();
+                    //var glass = Deserializer.Glass(QuoteStr);
+                    var candle = Deserializer.Candles(Candles);
+                    //FillVisual(glass, Strateg);
+                    //ToQuikCommand BidComms = Strateg.GetToQUIKCommand(glass, candle);
+                    if (candle != null)
+                    {
+                        var command = Writer.WriteCandles(candle);
+                        string LuaCommand = Serializer.QuikCommandToTransaction(command);
+                        CommandCtor.SendData(LuaCommand);
+                    }
                     Thread.Sleep(1);
-                    
                 }
             })
             .Start();

@@ -103,7 +103,7 @@ namespace TradeObjects
 
         public class ToQuikCommand
         {
-            public enums.Operation? Command_Code { get; set; }
+            public Operation? Command_Code { get; set; }
             public string ClassCode { get; set; }
             public string SecCode { get; set; }
             public string Action { get; set; }
@@ -113,8 +113,8 @@ namespace TradeObjects
             public int Qantity { get; set; }
             public string Trans_Id { get; set; }
             public string Oreder_Key { get; set; }
-
             public int ThrowQantity { get; set; }
+            public int? CandleCount { get; set; }
 
             public ToQuikCommand(string account, string classCode, string secCode)
             {
@@ -131,7 +131,7 @@ namespace TradeObjects
             public string trans_id { get; set; }
             public string class_code { get; set; }
             public string sec_code { get; set; }
-            public enums.Flag_Status flag_status { get; set; }
+            public Flag_Status flag_status { get; set; }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using static TradeObjects.Enums;
 using static TradeObjects.QuikDataObj;
 
-namespace DataContractRializer
+namespace DataContractConvert
 {
     public class Serializer
     {
@@ -31,11 +31,17 @@ namespace DataContractRializer
                     case Operation.SaleInMarket:
                         transStr = MarketBuySale_Serialize(QComm, 'S');
                         break;
+                    case Operation.SetCandles:
+                        transStr = Candl_Serialise(QComm);
+                        break;
                 }
                 return transStr;
             }
             return null;
         }
+
+
+
 
         private static string BuySale_Serialize(ToQuikCommand QComm)
         {
@@ -91,6 +97,12 @@ namespace DataContractRializer
         {
             string K_transStr = "k-" + QComm.Trans_Id;
             return K_transStr;
+        }
+
+        private static string Candl_Serialise(ToQuikCommand QComm)
+        {
+            string CandlSet = "c-" + QComm.CandleCount.ToString();
+            return CandlSet;
         }
     }
 }

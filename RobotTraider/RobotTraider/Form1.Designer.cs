@@ -53,6 +53,7 @@
             this.Salestb.ForeColor = System.Drawing.Color.Red;
             this.Salestb.Location = new System.Drawing.Point(12, 12);
             this.Salestb.Name = "Salestb";
+            this.Salestb.ReadOnly = true;
             this.Salestb.Size = new System.Drawing.Size(102, 149);
             this.Salestb.TabIndex = 4;
             this.Salestb.Text = "";
@@ -62,6 +63,7 @@
             this.Buystb.ForeColor = System.Drawing.Color.ForestGreen;
             this.Buystb.Location = new System.Drawing.Point(12, 167);
             this.Buystb.Name = "Buystb";
+            this.Buystb.ReadOnly = true;
             this.Buystb.Size = new System.Drawing.Size(102, 152);
             this.Buystb.TabIndex = 5;
             this.Buystb.Text = "";

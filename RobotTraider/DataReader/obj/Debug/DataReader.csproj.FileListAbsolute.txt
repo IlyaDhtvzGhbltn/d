@@ -1,0 +1,2 @@
+H:\Terminal\RobotTraider\DataReader\obj\Debug\DataReader.csprojAssemblyReference.cache
+H:\Terminal\RobotTraider\DataReader\obj\Debug\DataReader.csproj.CoreCompileInputs.cache
